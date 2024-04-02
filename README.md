@@ -1,1 +1,5 @@
 # LINFO1341_P1
+
+Plutôt que d'écrire un script en Python pour analyser les paquets, nous avons opté pour l'application directe de filtres dans Wireshark, comme démontré lors de lavidéo démo du projet. Initialement, nous avons utilisé un filtre "ip.addr == 82.94.183.165" pour isoler les communications avec l'adresse IP spécifique du serveur qui nous intéresse. Si c'était nécessaire, nous avons ensuite ajouté des protocoles tels que QUIC ou DNS directement dans la barre de recherche pour examiner des connexions spécifiques.
+
+Pour filtrer plus précisément les protocoles TCP pour les communications avec l'application, nous avons étendu le filtre initial "ip.addr == 82.94.183.165" avec des critères SYN et ACK. Ainsi, les filtres qu'on utilisait devenaient de la sorte "ip.addr == 82.94.183.165 && tcp.flags.syn==1 && tcp.flags.ack==1". En procédant de cette manière et en ajustant les paramètres au besoin, nous avons pu mener l'étude et l'analyse des paquets reçus avec plus de précision.
